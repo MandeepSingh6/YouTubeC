@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
-import { FETCH_LOGO, FETCH_VIDEO_DATA } from "../utils/apiCalls";
-import { formatNumber } from "../utils/constants";
-import { YTDurationToTime } from "../utils/constants";
+import { FETCH_LOGO, FETCH_VIDEO_DATA } from "../../utils/apiCalls";
+import { formatNumber } from "../../utils/constants";
+import { YTDurationToTime } from "../../utils/constants";
 import { useSelector } from "react-redux";
 
 const RelatedVideoCard = ({ data }) => {

@@ -2,13 +2,13 @@ import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { Waypoint } from "react-waypoint";
 import { useSelector } from "react-redux";
-import CommentsContainer from "./CommentsContainer";
+import CommentsContainer from "../Comments/CommentsContainer";
 import {
   FETCH_CHANNEL_DETAILS,
   FETCH_VIDEO_COMMENTS,
   FETCH_VIDEO_DATA,
-} from "../utils/apiCalls";
-import { formatNumber } from "../utils/constants";
+} from "../../utils/apiCalls";
+import { formatNumber } from "../../utils/constants";
 
 const ShortsCard = ({ data }) => {
   const darkMode = useSelector((store) => store.app.darkMode);

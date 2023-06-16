@@ -1,13 +1,13 @@
 import "./App.css";
 import Body from "./components/Body";
-import store from "./utils/store";
+import store from "../src/store/store";
 import { Provider } from "react-redux";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import MainContainer from "./components/MainContainer";
-import WatchPage from "./components/WatchPage";
-import SearchResults from "./components/SearchResults";
-import ShortsWatchPage from "./components/ShortsWatchPage";
-import ChannelPage from "./components/ChannelPage";
+import MainContainer from "../src/components/HomePage/MainContainer";
+import WatchPage from "../src/components/WatchPage/WatchPage";
+import SearchResults from "./components/SearchPage/SearchResults";
+import ShortsWatchPage from "./components/Shorts/ShortsWatchPage";
+import ChannelPage from "./components/Channel/ChannelPage";
 
 function App() {
   const appRouter = createBrowserRouter([

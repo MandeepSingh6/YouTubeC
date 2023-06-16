@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { FETCH_CHANNEL_DETAILS, FETCH_VIDEO_DATA } from "../utils/apiCalls";
-import { formatNumber, YTDurationToTime } from "../utils/constants";
+import { Link, useNavigate } from "react-router-dom";
+import { FETCH_CHANNEL_DETAILS, FETCH_VIDEO_DATA } from "../../utils/apiCalls";
+import { formatNumber, YTDurationToTime } from "../../utils/constants";
 import { useSelector } from "react-redux";
 import Moment from "react-moment";
-import { FETCH_THUMBNAIL_IMAGE } from "../utils/apiCalls";
+import { FETCH_THUMBNAIL_IMAGE } from "../../utils/apiCalls";
 
 const SearchVideoCard = ({ data }) => {
+  const navigate = useNavigate();
   const darkMode = useSelector((store) => store.app.darkMode);
   const [logo, setLogo] = useState("");
   const [thumbnail, setThumbnail] = useState();
@@ -42,10 +43,13 @@ const SearchVideoCard = ({ data }) => {
 
   return (
     <div className={darkMode ? "text-white" : ""}>
-      <Link to={"/watch?v=" + id} className="flex gap-3 mb-5 mr-16 ">
+      <div
+        onClick={() => navigate("/watch?v=" + id)}
+        className="sm:flex md:gap-3 mb-5 sm:mr-16 "
+      >
         <div className="relative">
           <img
-            className="max-w-[358px] h-[204px] rounded-xl"
+            className="sm:max-w-[358px] h-[204px] rounded-xl"
             // src={
             //   thumbnails.maxres ? thumbnails.maxres.url : thumbnails.medium.url
             // }
@@ -85,9 +89,9 @@ const SearchVideoCard = ({ data }) => {
               <p className="text-sm py-3">{channelTitle}</p>
             </Link>
           </div>
-          <p className="text-xs">{description}</p>
+          <p className="text-xs hidden sm:block">{description}</p>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };

@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setTrendingVideos } from "../utils/trendingVideosSlice";
-import { FETCH_TRENDING_VIDEOS } from "../utils/apiCalls";
+import { setTrendingVideos } from "../../store/trendingVideosSlice";
+import { FETCH_TRENDING_VIDEOS } from "../../utils/apiCalls";
 
-import VideoCard from "./VideoCard";
+import VideoCard from "./HomePageVideoCard";
 
 const VideoContainer = () => {
   const data = useSelector((store) => store.trendingVideos.data);
@@ -21,7 +21,7 @@ const VideoContainer = () => {
   };
 
   return (
-    <div className="grid grid-cols-2 gap-4 lg:grid-cols-3 ">
+    <div className="grid gap-2 sm:gap-4 grid-cols-1 lg:grid-cols-3 sm:grid-cols-2 ">
       {data.map((video) => (
         <VideoCard key={video.id} data={video} />
       ))}

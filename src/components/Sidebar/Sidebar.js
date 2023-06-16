@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchQuery } from "../utils/appSlice";
+import { setSearchQuery } from "../../store/appSlice";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
@@ -16,7 +16,7 @@ const Sidebar = () => {
     <div
       className={`pl-5 pr-1 pb-1 " + ${
         darkMode ? "text-white bg-black" : " text-black bg-white"
-      }`}
+      } `}
     >
       <ul className="leading-9 text-[15px] font-[400]">
         <Link to={"/"}>

@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
-import { FETCH_SEARCH_RESULTS } from "../utils/apiCalls";
-import ShortsCard from "./ShortsCard";
+import SearchVideoCard from "../SearchPage/SearchVideoCard";
+import ButtonList from "../TrendingTopicsButtons/ButtonList";
+import { FETCH_SEARCH_RESULTS } from "../../utils/apiCalls";
 
-const ShortsWatchPage = () => {
+const SearchResults = () => {
   const query = useSelector((store) => store.app.searchQuery);
   const darkMode = useSelector((store) => store.app.darkMode);
 
@@ -19,14 +20,15 @@ const ShortsWatchPage = () => {
   };
 
   return (
-    <div className={darkMode && "bg-black text-white"}>
-      <div className="mt-2 w-[84vw] flex flex-col ">
+    <div className={`sm:px-8 sm:py-2 ${darkMode && "bg-black"} `}>
+      <ButtonList />
+      <div className="">
         {data.map((video, index) => (
-          <ShortsCard key={index} data={video} />
+          <SearchVideoCard key={index} data={video} />
         ))}
       </div>
     </div>
   );
 };
 
-export default ShortsWatchPage;
+export default SearchResults;

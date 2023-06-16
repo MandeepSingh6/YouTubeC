@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from "react";
 import { useSearchParams } from "react-router-dom";
 import ChannelVideoCard from "./ChannelVideoCard";
-import { FETCH_CHANNEL_DETAILS, FETCH_CHANNEL_VIDEOS } from "../utils/apiCalls";
-import { formatNumber } from "../utils/constants";
+import {
+  FETCH_CHANNEL_DETAILS,
+  FETCH_CHANNEL_VIDEOS,
+} from "../../utils/apiCalls";
+import { formatNumber } from "../../utils/constants";
 import { useSelector } from "react-redux";
 
 const ChannelPage = () => {

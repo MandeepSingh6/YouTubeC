@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
-import { FETCH_CHANNEL_DETAILS } from "../utils/apiCalls";
-import { formatNumber, YTDurationToTime } from "../utils/constants";
+import { Link, useNavigate } from "react-router-dom";
+import { FETCH_CHANNEL_DETAILS } from "../../utils/apiCalls";
+import { formatNumber, YTDurationToTime } from "../../utils/constants";
 import Moment from "react-moment";
 import { useSelector } from "react-redux";
 
-const VideoCard = ({ data }) => {
+const HomePageVideoCard = ({ data }) => {
+  const navigate = useNavigate();
   const { snippet, statistics, id, contentDetails } = data;
   const { title, thumbnails, channelTitle, publishedAt, channelId } = snippet;
   const { viewCount, likeCount } = statistics;
@@ -25,7 +26,7 @@ const VideoCard = ({ data }) => {
 
   return (
     <div className={darkMode ? "text-white" : ""}>
-      <Link to={"watch?v=" + id}>
+      <div onClick={() => navigate("watch?v=" + id)}>
         <div className="relative">
           <img
             className={`rounded-xl max-w-full min-w-full ${
@@ -64,9 +65,9 @@ const VideoCard = ({ data }) => {
             </div>
           </div>
         </div>
-      </Link>
+      </div>
     </div>
   );
 };
 
-export default VideoCard;
+export default HomePageVideoCard;

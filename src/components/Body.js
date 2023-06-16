@@ -1,9 +1,9 @@
 import React, { useDebugValue, useEffect, useState } from "react";
-import Sidebar from "./Sidebar";
+import Sidebar from "./Sidebar/Sidebar";
 import { Outlet } from "react-router-dom";
-import { closeMenu, openMenu } from "../utils/appSlice";
+import { closeMenu, openMenu } from "../store/appSlice";
 import { useDispatch, useSelector } from "react-redux";
-import Head from "./Head";
+import Head from "./Header/Head";
 
 const Body = () => {
   const darkMode = useSelector((store) => store.app.darkMode);
@@ -25,7 +25,7 @@ const Body = () => {
         {menuOpen && (
           <div
             className={
-              "fixed top-[60px] bottom-0 w-[16%] overflow-scroll overscroll-none"
+              "fixed top-[60px] bottom-0 w-[100%] sm:w-[17%] overflow-scroll overscroll-none"
             }
           >
             <Sidebar />
@@ -37,7 +37,7 @@ const Body = () => {
             watchPageOpen
               ? "p-5 mt-[60px]"
               : menuOpen
-              ? "absolute left-[16%] right-0 top-[52px]"
+              ? "max-sm:hidden absolute left-6 sm:left-[16%] right-0 top-[52px]"
               : "absolute left-10 right-10 top-[52px]"
           }
         >

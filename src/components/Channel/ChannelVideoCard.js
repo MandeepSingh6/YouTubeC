@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import Moment from "react-moment";
 import { Link } from "react-router-dom";
-import { FETCH_THUMBNAIL_IMAGE } from "../utils/apiCalls";
+import { FETCH_THUMBNAIL_IMAGE } from "../../utils/apiCalls";
 
 const ChannelVideoCard = ({ data }) => {
   console.log(data);

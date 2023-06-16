@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Comment from "./Comment";
-import { FETCH_VIDEO_COMMENTS } from "../utils/apiCalls";
+import { FETCH_VIDEO_COMMENTS } from "../../utils/apiCalls";
 import { useSelector } from "react-redux";
 
 const CommentsContainer = ({ link }) => {

@@ -2,14 +2,13 @@ import React, { useRef, useState } from "react";
 import Button from "./Button";
 import { Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import { setSearchQuery } from "../utils/appSlice";
+import { setSearchQuery } from "../../store/appSlice";
 
 const ButtonList = () => {
   const dispatch = useDispatch();
   const scrollMenu = useRef();
   const darkMode = useSelector((store) => store.app.darkMode);
   const [scroll, setScroll] = useState(0);
-  console.log(scroll);
 
   const handleSetQuery = (query) => {
     dispatch(setSearchQuery(query));
@@ -43,7 +42,7 @@ const ButtonList = () => {
   return (
     <div className="relative ">
       <div
-        className="w-[94%] flex gap-[.7rem] justify-between mx-auto mt-2 mb-8 overflow-scroll scrollbar-hide scroll-smooth"
+        className="w-[98%] sm:w-[94%] flex gap-[.7rem] justify-between mx-auto mt-2 mb-8 overflow-scroll scrollbar-hide scroll-smooth"
         ref={scrollMenu}
       >
         {scroll > 190 && (
@@ -52,7 +51,7 @@ const ButtonList = () => {
               slide(-200);
               setScroll((prev) => (prev -= 200));
             }}
-            className={`absolute left-[10px] top-1 " + ${
+            className={`absolute left-[-20px] sm:left-[-10px] top-1 " + ${
               darkMode && "text-white"
             }`}
           >
@@ -70,7 +69,7 @@ const ButtonList = () => {
               slide(200);
               setScroll((prev) => (prev += 200));
             }}
-            className={`absolute top-1 right-[10px] rotate-180 " + ${
+            className={`absolute top-1 right-[-20px] sm:right-[-10px] rotate-180 " + ${
               darkMode && "text-white"
             }`}
           >

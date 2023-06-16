@@ -1,18 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { closeMenu, openMenu } from "../utils/appSlice";
-import { formatNumber } from "../utils/constants";
+import { closeMenu, openMenu } from "../../store/appSlice";
+import { formatNumber } from "../../utils/constants";
 import { useSearchParams } from "react-router-dom";
 import { Link } from "react-router-dom";
-import CommentsContainer from "./CommentsContainer";
+import CommentsContainer from "../Comments/CommentsContainer";
 import Moment from "react-moment";
-import { makeSidebarAbsolute, makeSidebarRelative } from "../utils/appSlice";
+import { makeSidebarAbsolute, makeSidebarRelative } from "../../store/appSlice";
 
 import {
   FETCH_CHANNEL_DETAILS,
   FETCH_VIDEO_DATA,
   FETCH_RELATED_VIDEOS,
-} from "../utils/apiCalls";
+} from "../../utils/apiCalls";
 import RelatedVideoCard from "./RelatedVideoCard";
 
 const WatchPage = () => {
@@ -66,16 +66,15 @@ const WatchPage = () => {
 
   return (
     <div className={darkMode && "text-white"}>
-      <div className="gap-5 flex ">
+      <div className="md:gap-5 md:flex">
         <div className="">
           <div
-            className={`w-[980px] pb-6 + ${
+            className={`w-full aspect-video md:w-[980px] md:h-[530px] md:pb-6 + ${
               darkMode ? "bg-[#21201d]" : "bg-gray-200"
             }`}
           >
             <iframe
-              width="940"
-              height="530"
+              className="w-full h-full"
               src={"https://www.youtube.com/embed/" + link + "?autoplay=1"}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"

@@ -3,17 +3,17 @@ import { createSlice } from "@reduxjs/toolkit";
 const appSlice = createSlice({
   name: "app",
   initialState: {
-    isMenuOpen: true,
+    isMenuOpen: false,
     searchQuery: "",
     darkMode: false,
     sidebarAbsolute: false,
   },
-  initialState: {
-    isMenuOpen: true,
-    searchQuery: "",
-    darkMode: false,
-    sidebarAbsolute: false,
-  },
+  // initialState: {
+  //   isMenuOpen: true,
+  //   searchQuery: "",
+  //   darkMode: false,
+  //   sidebarAbsolute: false,
+  // },
   reducers: {
     toogleMenu: (state) => {
       state.isMenuOpen = !state.isMenuOpen;
