@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import Moment from "react-moment";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { FETCH_LOGO, FETCH_VIDEO_DATA } from "../../utils/apiCalls";
 import { formatNumber } from "../../utils/constants";
 import { YTDurationToTime } from "../../utils/constants";
 import { useSelector } from "react-redux";
 
 const RelatedVideoCard = ({ data }) => {
+  const navigate = useNavigate();
   const [videoData, setVideoData] = useState([]);
   const { title, channelTitle, description, thumbnails, channelId } =
     data.snippet;
@@ -23,8 +24,9 @@ const RelatedVideoCard = ({ data }) => {
   };
 
   return (
-    <div className={darkMode && "text-white"}>
-      <Link to={"/watch?v=" + id} className="flex gap-2 mb-4 mr-4 max-h[92px]">
+    <div className={darkMode ? "text-white" : ""}>
+      <div onClick={() => navigate("/watch?v=" + id)}>
+        {/* <Link to={"/watch?v=" + id} className="flex gap-2 mb-4 mr-4 max-h[92px]"> */}
         <div className="relative">
           <img
             className="max-w-[165px] h-[92px] rounded-xl"
@@ -54,7 +56,8 @@ const RelatedVideoCard = ({ data }) => {
             )}
           </p>
         </div>
-      </Link>
+        {/* </Link> */}
+      </div>
     </div>
   );
 };

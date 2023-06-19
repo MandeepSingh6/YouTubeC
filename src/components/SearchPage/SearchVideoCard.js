@@ -45,11 +45,11 @@ const SearchVideoCard = ({ data }) => {
     <div className={darkMode ? "text-white" : ""}>
       <div
         onClick={() => navigate("/watch?v=" + id)}
-        className="sm:flex md:gap-3 mb-5 sm:mr-16 "
+        className="md:flex md:gap-2 mb-5 sm:px-16 sm:mb-12 md:px-0"
       >
         <div className="relative">
           <img
-            className="sm:max-w-[358px] h-[204px] rounded-xl"
+            className="w-full md:w-[330px] md:max-w-[350px] aspect-video sm:h-[204px] rounded-xl"
             // src={
             //   thumbnails.maxres ? thumbnails.maxres.url : thumbnails.medium.url
             // }

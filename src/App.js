@@ -2,7 +2,11 @@ import "./App.css";
 import Body from "./components/Body";
 import store from "../src/store/store";
 import { Provider } from "react-redux";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  createHashRouter,
+  RouterProvider,
+} from "react-router-dom";
 import MainContainer from "../src/components/HomePage/MainContainer";
 import WatchPage from "../src/components/WatchPage/WatchPage";
 import SearchResults from "./components/SearchPage/SearchResults";
@@ -10,7 +14,7 @@ import ShortsWatchPage from "./components/Shorts/ShortsWatchPage";
 import ChannelPage from "./components/Channel/ChannelPage";
 
 function App() {
-  const appRouter = createBrowserRouter([
+  const appRouter = createHashRouter([
     {
       path: "/",
       element: <Body />,

@@ -17,7 +17,7 @@ const CommentsContainer = ({ link }) => {
   };
 
   return (
-    <div className={darkMode && "text-white"}>
+    <div className={darkMode ? "text-white" : ""}>
       <div className="my-4 mt-6 max-w-[940px] text-left ">
         <p className="text-[1.2rem] font-[400]">Comments</p>
         {commentsData &&

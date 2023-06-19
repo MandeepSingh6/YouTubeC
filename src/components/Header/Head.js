@@ -2,13 +2,14 @@ import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
 import { toogleMenu, toogleDarkMode } from "../../store/appSlice";
 import { SUGGESTION_API } from "../../utils/constants";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useSelector } from "react-redux";
 import { cacheSuggestions } from "../../store/suggestionsSlice";
 import { toogleSearchResults, setSearchQuery } from "../../store/appSlice";
 import img from "../../assets/images/burger-bar.png";
 import youtubeLogoLightTheme from "../../assets/images/youtube-logo-lighttheme.svg";
 import youtubeLogoDarkTheme from "../../assets/images/youtube-logo-darktheme.svg";
+import { closeMenu } from "../../store/appSlice";
 
 const Head = () => {
   const darkMode = useSelector((store) => store.app.darkMode);
@@ -22,6 +23,7 @@ const Head = () => {
   const [suggestions, setSuggestions] = useState([]);
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [showSearchBox, setShowSearchBox] = useState(false);
+  const navigate = useNavigate();
 
   const storedSuggestions = useSelector((store) => store.suggestions);
 
@@ -30,8 +32,6 @@ const Head = () => {
       if (input in storedSuggestions) {
         setSuggestions(storedSuggestions[input]);
       } else {
-        //changed
-        return;
         fetchData();
       }
     }, 200);
@@ -50,6 +50,12 @@ const Head = () => {
   };
   const setQuery = (query) => {
     dispatch(setSearchQuery(query));
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    dispatch(closeMenu());
+    setQuery(input);
+    navigate("/search");
   };
 
   return (
@@ -79,6 +85,7 @@ const Head = () => {
       </div>
       <div>
         <form
+          onSubmit={handleSubmit}
           className={`${
             showSearchBox ? "block" : "hidden"
           } min-w-[100vw] sm:min-w-0 sm:block my-2 sm:my-auto`}
@@ -90,6 +97,7 @@ const Head = () => {
           )}
 
           <input
+            onKeyDown={(e) => e.key === "Enter" && handleSubmit(e)}
             value={input}
             onChange={(e) => setInput(e.target.value)}
             type="text"
@@ -117,7 +125,7 @@ const Head = () => {
             </ul>
           )}
 
-          <Link
+          <span
             to={"/search"}
             onClick={() => {
               setQuery(input);
@@ -131,7 +139,7 @@ const Head = () => {
             >
               🔍
             </button>
-          </Link>
+          </span>
         </form>
         {!showSearchBox && (
           <button className="sm:hidden" onClick={() => setShowSearchBox(true)}>

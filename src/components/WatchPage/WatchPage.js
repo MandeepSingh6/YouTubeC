@@ -46,6 +46,12 @@ const WatchPage = () => {
   }, [link]);
 
   useEffect(() => {
+    return () => {
+      dispatch(closeMenu());
+    };
+  }, []);
+
+  useEffect(() => {
     fetchChannelDetails();
   }, [videoData]);
 
@@ -65,12 +71,12 @@ const WatchPage = () => {
   };
 
   return (
-    <div className={darkMode && "text-white"}>
-      <div className="md:gap-5 md:flex">
+    <div className={darkMode ? "text-white" : ""}>
+      <div className="md:gap-5 lg:flex">
         <div className="">
           <div
-            className={`w-full aspect-video md:w-[980px] md:h-[530px] md:pb-6 + ${
-              darkMode ? "bg-[#21201d]" : "bg-gray-200"
+            className={`w-full aspect-video xl:w-[840px] + ${
+              darkMode ? "bg-[#21201d]" : "bg-gray-400"
             }`}
           >
             <iframe
@@ -125,6 +131,9 @@ const WatchPage = () => {
             </div>
           </div>
           <CommentsContainer link={link} />
+          <hr />
+          <hr />
+          <br />
         </div>
         <div className="">
           {relatedVidoes.map((video) => (

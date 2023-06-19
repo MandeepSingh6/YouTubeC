@@ -52,7 +52,7 @@ const Sidebar = () => {
           <Link to={"search"}>Fashion & Beauty</Link>
         </li>
         <hr className="my-3" />
-        <li className="font-bold">More from YouTube</li>
+        {/* <li className="font-bold">More from YouTube</li>
         <li>YouTube Studio</li>
         <li>YouTube Music</li>
         <li>YouTube Kids</li>
@@ -77,7 +77,7 @@ const Sidebar = () => {
           <a href="">How YouTube works </a>
           <a href="">Test new features </a>
         </li>
-        <li>©️ 2023 Google LLC</li>
+        <li>©️ 2023 Google LLC</li> */}
       </ul>
     </div>
   );
