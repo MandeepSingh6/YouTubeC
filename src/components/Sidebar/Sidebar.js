@@ -52,40 +52,23 @@ const Sidebar = () => {
           <Link to={"search"}>Fashion & Beauty</Link>
         </li>
         <hr className="my-3" />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
-        {/* <li className="font-bold">More from YouTube</li>
-        <li>YouTube Studio</li>
-        <li>YouTube Music</li>
-        <li>YouTube Kids</li>
-        <hr className="my-3" />
-        <li>Settings</li>
-        <li>Report history</li>
-        <li>Help</li>
-        <li>Send feedback</li>
-        <hr className="my-3" />
-        <li className="text-sm">
-          <a href="">About </a>
-          <a href="">Press </a>
-          <a href="">Copyright </a>
-          <a href="">Contact us </a>
-          <a href="">Creators </a>
-          <a href="">Advertise </a>
-          <a href="">Developers </a>
-          <br />
-          <a href="">Terms </a>
-          <a href="">Privacy </a>
-          <a href="">Policy & Safety </a>
-          <a href="">How YouTube works </a>
-          <a href="">Test new features </a>
+        <li className="font-bold">More</li>
+        <li onClick={() => dispatch(setSearchQuery("Science"))}>
+          <Link to={"search"}>Science</Link>
         </li>
-        <li>©️ 2023 Google LLC</li> */}
+        <li onClick={() => dispatch(setSearchQuery("Cars"))}>
+          <Link to={"search"}>Cars</Link>
+        </li>
+        <li onClick={() => dispatch(setSearchQuery("Marvel"))}>
+          <Link to={"search"}>Marvel</Link>
+        </li>
+        <li onClick={() => dispatch(setSearchQuery("Hollywood"))}>
+          <Link to={"search"}>Hollywood</Link>
+        </li>
+        <li onClick={() => dispatch(setSearchQuery("Crypto"))}>
+          <Link to={"search"}>Crypto</Link>
+        </li>
+        <hr className="my-3" />
       </ul>
     </div>
   );

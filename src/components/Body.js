@@ -25,7 +25,7 @@ const Body = () => {
         {menuOpen && (
           <div
             className={
-              "fixed top-[60px] bottom-0 w-[100%] sm:w-[16%] md:w-[12%] xl:[10%] overflow-scroll overscroll-none"
+              "fixed top-[60px] bottom-0 w-[100%] sm:w-[16%] md:w-[12%] xl:[12%] overflow-scroll overscroll-none"
             }
           >
             <Sidebar />
@@ -37,7 +37,7 @@ const Body = () => {
             watchPageOpen
               ? "p-5 mt-[60px] 3xl:block 3xl:mx-auto"
               : menuOpen
-              ? "max-sm:hidden absolute left-6 sm:left-[16%] md:left-[12%] xl:left-[10%] xl:pl-4 right-0 top-[52px]"
+              ? "max-sm:hidden absolute left-6 sm:left-[16%] md:left-[12%] xl:left-[12%] xl:pl-4 right-0 top-[52px]"
               : "absolute left-10 right-10 top-[52px]"
           }
         >
