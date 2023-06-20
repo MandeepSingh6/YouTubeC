@@ -25,11 +25,14 @@ const RelatedVideoCard = ({ data }) => {
 
   return (
     <div className={darkMode ? "text-white" : ""}>
-      <div onClick={() => navigate("/watch?v=" + id)}>
+      <div
+        onClick={() => navigate("/watch?v=" + id)}
+        className="flex gap-2 mb-4 mr-1"
+      >
         {/* <Link to={"/watch?v=" + id} className="flex gap-2 mb-4 mr-4 max-h[92px]"> */}
         <div className="relative">
           <img
-            className="max-w-[165px] h-[92px] rounded-xl"
+            className="max-w-[165px] h-full rounded-xl"
             src={thumbnails.medium.url}
             // src={`https://i.ytimg.com/vi/${id}/maxresdefault.jpg`}
             alt=""

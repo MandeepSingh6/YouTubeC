@@ -29,9 +29,7 @@ const HomePageVideoCard = ({ data }) => {
       <div onClick={() => navigate("watch?v=" + id)}>
         <div className="relative">
           <img
-            className={`rounded-xl max-w-full min-w-full ${
-              menuOpen && "h-[204px]"
-            }`}
+            className={`rounded-xl max-w-full min-w-full aspect-video`}
             src={
               thumbnails.maxres ? thumbnails.maxres.url : thumbnails.medium.url
             }

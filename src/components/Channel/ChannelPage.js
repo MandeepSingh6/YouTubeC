@@ -29,7 +29,7 @@ const ChannelPage = () => {
     setVideos(data);
   };
   return (
-    <div className={`mt-[10px] ml-2 ${darkMode ? "text-white" : ""}`}>
+    <div className={`mt-[12px] ${darkMode ? "text-white" : ""}`}>
       {data?.brandingSettings?.image && (
         <img
           className="w-full h-[192px] object-cover mb-6"
@@ -40,8 +40,8 @@ const ChannelPage = () => {
           alt=""
         />
       )}
-      <div className="px-10">
-        <div className="flex items-center gap-6">
+      <div className="md:px-10">
+        <div className="flex items-center md:gap-6">
           <div>
             <img
               className="min-w-[128px] h-[128px] rounded-full"
@@ -49,12 +49,12 @@ const ChannelPage = () => {
               alt=""
             />
           </div>
-          <div className="font-bold text-[18px]">
-            <p className="font-extrabold text-[24px] ">
+          <div className="text-[14px] sm:text-[16px] font-bold md:text-[18px]">
+            <p className="md:font-extrabold md:text-[24px] ">
               {data?.snippet?.title}
             </p>
             <span className="">{data?.snippet?.customUrl}</span>
-            &nbsp; &nbsp;
+            <br />
             <span className="">
               {data?.statistics?.subscriberCount &&
                 formatNumber(data?.statistics?.subscriberCount)}
@@ -82,7 +82,7 @@ const ChannelPage = () => {
             <li>ABOUT</li>
           </ul>
           <hr /> */}
-          <div className="grid grid-cols-3 gap-4 lg:grid-cols-4 mt-6">
+          <div className="grid grid-cols-2 gap-2 md:gap-4 lg:grid-cols-3 2xl:grid-cols-4 mt-6">
             {videos &&
               videos.map((video, index) => (
                 <ChannelVideoCard key={index} data={video} />

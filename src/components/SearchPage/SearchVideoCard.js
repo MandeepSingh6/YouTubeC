@@ -49,7 +49,7 @@ const SearchVideoCard = ({ data }) => {
       >
         <div className="relative">
           <img
-            className="w-full md:w-[330px] md:max-w-[350px] aspect-video sm:h-[204px] rounded-xl"
+            className="w-full md:w-[330px] md:max-w-[350px] aspect-video rounded-xl"
             // src={
             //   thumbnails.maxres ? thumbnails.maxres.url : thumbnails.medium.url
             // }

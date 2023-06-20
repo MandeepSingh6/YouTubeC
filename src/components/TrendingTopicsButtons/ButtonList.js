@@ -42,10 +42,10 @@ const ButtonList = () => {
   return (
     <div className="relative ">
       <div
-        className="w-[98%] sm:w-[94%] flex gap-[.7rem] justify-between mx-auto mt-2 mb-8 overflow-scroll scrollbar-hide scroll-smooth"
+        className="w-[100%] sm:w-[100%] flex gap-[.7rem] justify-between mx-auto mt-2 mb-8 overflow-scroll scrollbar-hide scroll-smooth"
         ref={scrollMenu}
       >
-        {scroll > 190 && (
+        {/* {scroll > 190 && (
           <button
             onClick={() => {
               slide(-200);
@@ -57,13 +57,13 @@ const ButtonList = () => {
           >
             ⬅
           </button>
-        )}
+        )} */}
         {tags.map((tag, index) => (
           <Link key={index} onClick={() => handleSetQuery(tag)} to={"/search"}>
             <Button name={tag} />
           </Link>
         ))}
-        {scroll < 600 && (
+        {/* {scroll < 600 && (
           <button
             onClick={() => {
               slide(200);
@@ -75,7 +75,7 @@ const ButtonList = () => {
           >
             ⬅
           </button>
-        )}
+        )} */}
       </div>
     </div>
   );

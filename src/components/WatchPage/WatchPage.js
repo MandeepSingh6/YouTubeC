@@ -72,15 +72,15 @@ const WatchPage = () => {
 
   return (
     <div className={darkMode ? "text-white" : ""}>
-      <div className="md:gap-5 lg:flex">
+      <div className="gap-5 lg:flex ">
         <div className="">
           <div
-            className={`w-full aspect-video xl:w-[840px] + ${
+            className={`w-full aspect-video xl:min-w-[840px] 2xl:min-w-[70vw] bg-black 3xl:min-w-[1400px] ${
               darkMode ? "bg-[#21201d]" : "bg-gray-400"
             }`}
           >
             <iframe
-              className="w-full h-full"
+              className="w-full aspect-video"
               src={"https://www.youtube.com/embed/" + link + "?autoplay=1"}
               title="YouTube video player"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;"

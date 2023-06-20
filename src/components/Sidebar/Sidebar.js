@@ -14,7 +14,7 @@ const Sidebar = () => {
 
   return (
     <div
-      className={`pl-5 pr-1 pb-1 " + ${
+      className={`pl-5 pr-1 pb-1" + ${
         darkMode ? "text-white bg-black" : " text-black bg-white"
       } `}
     >
@@ -52,6 +52,14 @@ const Sidebar = () => {
           <Link to={"search"}>Fashion & Beauty</Link>
         </li>
         <hr className="my-3" />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
         {/* <li className="font-bold">More from YouTube</li>
         <li>YouTube Studio</li>
         <li>YouTube Music</li>
