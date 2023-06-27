@@ -7,8 +7,6 @@ import { setSearchQuery } from "../../store/appSlice";
 const ButtonList = () => {
   const dispatch = useDispatch();
   const scrollMenu = useRef();
-  const darkMode = useSelector((store) => store.app.darkMode);
-  const [scroll, setScroll] = useState(0);
 
   const handleSetQuery = (query) => {
     dispatch(setSearchQuery(query));
@@ -35,47 +33,17 @@ const ButtonList = () => {
     "Dance",
   ];
 
-  const slide = (shift) => {
-    scrollMenu.current.scrollLeft += shift;
-  };
-
   return (
     <div className="relative ">
       <div
-        className="w-[100%] sm:w-[100%] flex gap-[.7rem] justify-between mx-auto mt-2 mb-8 overflow-scroll scrollbar-hide scroll-smooth"
+        className="w-[100%] sm:w-[100%] flex gap-[.7rem] justify-between mx-auto mt-3 mb-8 overflow-scroll scrollbar-hide scroll-smooth"
         ref={scrollMenu}
       >
-        {/* {scroll > 190 && (
-          <button
-            onClick={() => {
-              slide(-200);
-              setScroll((prev) => (prev -= 200));
-            }}
-            className={`absolute left-[-20px] sm:left-[-10px] top-1 " + ${
-              darkMode && "text-white"
-            }`}
-          >
-            ⬅
-          </button>
-        )} */}
         {tags.map((tag, index) => (
           <Link key={index} onClick={() => handleSetQuery(tag)} to={"/search"}>
             <Button name={tag} />
           </Link>
         ))}
-        {/* {scroll < 600 && (
-          <button
-            onClick={() => {
-              slide(200);
-              setScroll((prev) => (prev += 200));
-            }}
-            className={`absolute top-1 right-[-20px] sm:right-[-10px] rotate-180 " + ${
-              darkMode && "text-white"
-            }`}
-          >
-            ⬅
-          </button>
-        )} */}
       </div>
     </div>
   );

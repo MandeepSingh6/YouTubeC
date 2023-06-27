@@ -17,9 +17,13 @@ const SearchResults = () => {
   }, [query]);
 
   useEffect(() => {
-    dispatch(closeMenu());
-    return () => {
+    if (window.innerWidth < 900) {
       dispatch(closeMenu());
+    }
+    return () => {
+      if (window.innerWidth < 900) {
+        dispatch(closeMenu());
+      }
     };
   }, []);
 

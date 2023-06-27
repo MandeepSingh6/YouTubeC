@@ -12,6 +12,8 @@ import youtubeLogoDarkTheme from "../../assets/images/youtube-logo-darktheme.svg
 import { closeMenu } from "../../store/appSlice";
 
 const Head = () => {
+  console.log(window.innerWidth);
+
   const darkMode = useSelector((store) => store.app.darkMode);
   const sun =
     "https://www.uplooder.net/img/image/55/7aa9993fc291bc170abea048589896cf/sun.svg";
@@ -37,6 +39,12 @@ const Head = () => {
     }, 200);
     return () => clearTimeout(timer);
   }, [input]);
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 639) {
+      setShowSearchBox(false);
+    }
+  });
 
   const fetchData = async () => {
     const res = await fetch(SUGGESTION_API + input);

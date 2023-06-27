@@ -5,7 +5,6 @@ import { setSearchQuery } from "../../store/appSlice";
 
 const Sidebar = () => {
   const isMenuOpen = useSelector((store) => store.app.isMenuOpen);
-  const sidebarAbsolute = useSelector((store) => store.app.sidebarAbsolute);
   const dispatch = useDispatch();
 
   const darkMode = useSelector((store) => store.app.darkMode);
@@ -68,6 +67,19 @@ const Sidebar = () => {
         <li onClick={() => dispatch(setSearchQuery("Crypto"))}>
           <Link to={"search"}>Crypto</Link>
         </li>
+        <li onClick={() => dispatch(setSearchQuery("Football"))}>
+          <Link to={"search"}>Football</Link>
+        </li>
+        <li onClick={() => dispatch(setSearchQuery("Boxing"))}>
+          <Link to={"search"}>Boxing</Link>
+        </li>
+        <li onClick={() => dispatch(setSearchQuery("Tesla"))}>
+          <Link to={"search"}>Tesla</Link>
+        </li>
+        <li onClick={() => dispatch(setSearchQuery("Weather"))}>
+          <Link to={"search"}>Weather</Link>
+        </li>
+
         <hr className="my-3" />
       </ul>
     </div>

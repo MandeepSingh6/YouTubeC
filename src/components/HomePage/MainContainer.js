@@ -15,7 +15,7 @@ const MainContainer = () => {
 
   const darkMode = useSelector((store) => store.app.darkMode);
   return (
-    <div className={`py-1 sm:px-6 sm:pr-16 sm:py-2 ${darkMode && "bg-black"}`}>
+    <div className={`py-1 sm:px-6 sm:py-2 ${darkMode && "bg-black"}`}>
       <ButtonList />
       <VideoContainer />
     </div>
