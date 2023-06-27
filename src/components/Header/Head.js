@@ -97,7 +97,10 @@ const Head = () => {
           } min-w-[100vw] sm:min-w-0 sm:block my-2 sm:my-auto`}
         >
           {showSearchBox && (
-            <button className="mr-1" onClick={() => setShowSearchBox(false)}>
+            <button
+              className={"mr-1 " + darkMode && "text-white"}
+              onClick={() => setShowSearchBox(false)}
+            >
               ⬅
             </button>
           )}
