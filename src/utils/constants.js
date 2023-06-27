@@ -1,5 +1,5 @@
 export const SUGGESTION_API =
-  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://cors-anywhere.herokuapp.com/https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const formatNumber = (input) => {
   const ranges = [
