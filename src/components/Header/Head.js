@@ -99,7 +99,7 @@ const Head = () => {
         >
           {showSearchBox && (
             <button
-              className={"mr-1 " + darkMode && "text-white"}
+              className={"mr-1" + darkMode ? "text-white" : "text-black"}
               onClick={() => setShowSearchBox(false)}
             >
               ⬅
