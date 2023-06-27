@@ -21,9 +21,9 @@ const Sidebar = () => {
         <Link to={"/"}>
           <li className="font-bold">Home</li>
         </Link>
-        <li onClick={() => dispatch(setSearchQuery("shorts"))}>
+        {/* <li onClick={() => dispatch(setSearchQuery("shorts"))}>
           <Link to={"shorts"}>Shorts</Link>
-        </li>
+        </li> */}
         <hr className="my-3" />
         <li className="font-bold">Explore</li>
         <li>
