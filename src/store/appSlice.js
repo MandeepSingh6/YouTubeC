@@ -8,12 +8,7 @@ const appSlice = createSlice({
     darkMode: false,
     sidebarAbsolute: false,
   },
-  // initialState: {
-  //   isMenuOpen: true,
-  //   searchQuery: "",
-  //   darkMode: false,
-  //   sidebarAbsolute: false,
-  // },
+
   reducers: {
     toogleMenu: (state) => {
       state.isMenuOpen = !state.isMenuOpen;

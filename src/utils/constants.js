@@ -1,5 +1,5 @@
 export const SUGGESTION_API =
-  "http://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
+  "https://suggestqueries.google.com/complete/search?client=firefox&ds=yt&q=";
 
 export const formatNumber = (input) => {
   const ranges = [
