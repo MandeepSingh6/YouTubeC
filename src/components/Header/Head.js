@@ -62,6 +62,7 @@ const Head = () => {
     dispatch(closeMenu());
     setQuery(input);
     navigate("/search");
+    setShowSuggestions(false);
   };
 
   return (
