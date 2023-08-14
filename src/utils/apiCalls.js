@@ -6409,8 +6409,12 @@ export const FETCH_RELATED_VIDEOS = async (videoId) => {
   //     },
   //   },
   // ];
-  const res = await fetch(
+
+  const resOld = await fetch(
     `https://youtube.googleapis.com/youtube/v3/search?part=snippet&relatedToVideoId=${videoId}&maxResults=30&type=video&key=${key}`
+  );
+  const res = await fetch(
+    `https://youtube.googleapis.com/youtube/v3/search?part=snippet&maxResults=25&q=${videoId}&key=${key}`
   );
   const data = await res.json();
   // console.log("fetch related videos", data.items);

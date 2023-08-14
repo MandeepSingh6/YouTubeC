@@ -66,7 +66,8 @@ const WatchPage = () => {
   };
 
   const fetchRelatedVideos = async () => {
-    const data = await FETCH_RELATED_VIDEOS(link);
+    // const data = await FETCH_RELATED_VIDEOS(link);
+    const data = await FETCH_RELATED_VIDEOS(title);
     setRelatedVideos(data);
   };
 

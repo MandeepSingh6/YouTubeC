@@ -51,10 +51,7 @@ const RelatedVideoCard = ({ data }) => {
             <p className="text-xs py-1">{channelTitle}</p>
           </Link>
           <p className="text-xs">
-            {videoData.statistics &&
-              formatNumber(videoData?.statistics?.viewCount) + " Views"}
-            &nbsp;&nbsp;&nbsp;&nbsp;
-            {videoData.snippet && (
+            {videoData && (
               <Moment fromNow>{videoData?.snippet?.publishedAt}</Moment>
             )}
           </p>
