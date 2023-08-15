@@ -17,14 +17,12 @@ import RelatedVideoCard from "./RelatedVideoCard";
 
 const WatchPage = () => {
   const darkMode = useSelector((store) => store.app.darkMode);
-
   const [searchParams, setSearchParams] = useSearchParams();
+  const link = searchParams.get("v");
 
   const [videoData, setVideoData] = useState([]);
-  const [relatedVidoes, setRelatedVideos] = useState([]);
   const [channelDetails, setChannelDetails] = useState("");
-
-  const link = searchParams.get("v");
+  const [relatedVidoes, setRelatedVideos] = useState([]);
 
   const { snippet, statistics } = videoData || "";
   const { title, channelTitle, channelId } = snippet || "";
@@ -34,8 +32,8 @@ const WatchPage = () => {
 
   useEffect(() => {
     fetchData();
-    fetchRelatedVideos();
     fetchChannelDetails();
+    fetchRelatedVideos();
     dispatch(makeSidebarAbsolute());
 
     dispatch(closeMenu());
@@ -43,7 +41,7 @@ const WatchPage = () => {
       dispatch(openMenu());
       dispatch(makeSidebarRelative());
     };
-  }, [link]);
+  }, [link, title]);
 
   useEffect(() => {
     return () => {
@@ -66,8 +64,7 @@ const WatchPage = () => {
   };
 
   const fetchRelatedVideos = async () => {
-    // const data = await FETCH_RELATED_VIDEOS(link);
-    const data = await FETCH_RELATED_VIDEOS(title);
+    const data = await FETCH_RELATED_VIDEOS(link);
     setRelatedVideos(data);
   };
 
@@ -137,11 +134,14 @@ const WatchPage = () => {
           <br />
         </div>
         <div className="">
-          {relatedVidoes.map((video) => (
-            <div key={video.id.videoId}>
-              {<RelatedVideoCard data={video} />}
-            </div>
-          ))}
+          {relatedVidoes &&
+            relatedVidoes.map((video) => (
+              <div key={video.id.videoId}>
+                {video.id.kind === "youtube#video" && (
+                  <RelatedVideoCard data={video} />
+                )}
+              </div>
+            ))}
         </div>
       </div>
     </div>
