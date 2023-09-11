@@ -1,6 +1,3 @@
-// export const key = "AIzaSyCtRJox0MG10bNheT3FoiwmuoieFqO5ZR4";
-export const key = "AIzaSyAflT4EDK7FnUU5uZjpKV3gQwoCPm_heTU";
-
 export const FETCH_TRENDING_VIDEOS = async () => {
   // return [
   //   {
